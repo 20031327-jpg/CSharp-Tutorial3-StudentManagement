@@ -60,7 +60,9 @@ public class Customer
         Products = new List<Product>(); // Initialize the list
     }
 
-    // Method to add a product to the customer's list
+    // Adds a product to the customer's product list
+    // Updated by: Dipesh Khatri, Student ID: 20031327, Date: December 06, 2025
+    // Parameters: product - The Product object to add to this customer
     public void AddProduct(Product product)
     {
         Products.Add(product);
@@ -99,6 +101,16 @@ class Program
         // Create two customers
         Customer Cust1 = new Customer(101, "Dipesh Khatri", "dipesh@gmail.com");
         Customer Cust2 = new Customer(102, "Ramesh Gautam", "ramesh@gmail.com");
+
+        Console.WriteLine("Enter customer name:");
+        string name = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            Console.WriteLine("Error: Name cannot be empty. Using default name 'Unknown Customer'.");
+            name = "Unknown Customer";
+        }
+
 
         // Add products to customers
         Cust1.AddProduct(p1);
